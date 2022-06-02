@@ -1,13 +1,16 @@
 @media(min-width:768px) {  
 }
-
 @import url('http://fonts.cdnfonts.com/css/clash-display?styles=106289');
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .w {
     margin: 0 auto;
     width: 90%;
 }
-
+#div
 
 body {
     font-family: 'Clash Display', sans-serif,Helvetica, Arial;
@@ -63,7 +66,6 @@ header {
 
 
 
-
     .logo {
         position: absolute;
         top: 0px;
@@ -80,6 +82,17 @@ header {
     }
 
 }
+
+.top {
+    display: flex;
+    width: 100%;
+    height: 10vw;
+    background-color: antiquewhite;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0,20px,0,20px;
+}
+
 
 #title-home {
     font-size: 7vw;
@@ -121,7 +134,7 @@ footer {
     .socialicon {
         height: 3px
         ;
-    }
+      }
     
 
 

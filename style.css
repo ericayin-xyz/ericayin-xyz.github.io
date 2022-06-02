@@ -1,10 +1,16 @@
 @import url("http://fonts.cdnfonts.com/css/clash-display?styles=106289");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .w {
   margin: 0 auto;
   width: 90%;
 }
 
-body {
+#div body {
   font-family: "Clash Display", sans-serif, Helvetica, Arial;
   width: 100%;
   min-width: 320px;
@@ -63,6 +69,16 @@ header .logo a {
   width: 100px;
   height: 71px;
   background: url(/images/logo_100px.png) no-repeat;
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  height: 10vw;
+  background-color: antiquewhite;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0, 20px, 0, 20px;
 }
 
 #title-home {
