@@ -1,0 +1,63 @@
+@import url('http://fonts.cdnfonts.com/css/clash-display?styles=106289');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Clash Display', sans-serif,Helvetica, Arial;
+    width: 100vw;
+
+
+   
+    font-size: 14px;
+    background-color: #141617;
+    color: #e6dfdf;
+    line-height: 1.3;
+}
+
+.channel {
+    position: absolute;
+    text-align: center;
+}
+
+.menu_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    user-select: none;
+}
+
+.menu_container input {
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+
+.menu_container .bt {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 6px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.menu_container .bt span {
+    display: block;
+    width: 100%;
+    height: 9px;
+
+    left: 0;
+    border-radius: 9px;
+    background-color: #141617;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}

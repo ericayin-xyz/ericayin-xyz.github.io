@@ -5,105 +5,86 @@
   box-sizing: border-box;
 }
 
-.w {
-  margin: 0 auto;
-  width: 90%;
-}
-
-#div body {
+body {
   font-family: "Clash Display", sans-serif, Helvetica, Arial;
-  width: 100%;
-  min-width: 320px;
-  max-width: 768px;
-  margin: 0 auto;
+  width: 100vw;
   font-size: 14px;
-  background-color: #334046;
-  color: #f5f5f5;
+  background-color: #141617;
+  color: #e6dfdf;
   line-height: 1.3;
 }
 
-header {
-  background-color: rgb(131, 212, 208);
-  height: 80px;
+header .ham_menu {
+  width: 100vm;
+  height: 48px;
+  background-color: rgba(205, 205, 191, 0.083);
 }
-header ul li {
-  float: left;
-  height: 80px;
-  background-color: rgb(81, 73, 63);
-  text-align: center;
-  line-height: 70px;
+header .ham_menu #toggle {
+  display: none;
 }
-header ul li:nth-child(1) {
-  width: 22%;
-  vertical-align: middle;
-}
-header ul li:nth-child(1) img {
-  width: 80px;
-}
-header ul li:nth-child(2) {
-  width: 56%;
-  font-size: 1.6em;
-}
-header ul li:nth-child(3) {
-  width: 22%;
-  vertical-align: middle;
-}
-header ul li:nth-child(3) img {
-  width: 65px;
-  margin-top: 4px;
-}
-header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-header .logo {
-  position: absolute;
-  top: 0px;
-  width: 100px;
-  height: 80px;
-  background-color: coral;
-}
-header .logo a {
+header .ham_menu label {
   display: block;
-  width: 100px;
-  height: 71px;
-  background: url(/images/logo_100px.png) no-repeat;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
 }
-
-.top {
-  display: flex;
-  width: 100%;
-  height: 10vw;
-  background-color: antiquewhite;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0, 20px, 0, 20px;
+header .ham_menu label .ham_container {
+  position: relative;
+  top: 17px;
+  left: 14px;
+  width: 25px;
+  height: 20px;
 }
-
-#title-home {
-  font-size: 7vw;
-  height: 100vh;
-  margin-top: 20vh;
-  text-align: center;
-  align-items: center;
-  line-break: normal;
-}
-
-footer {
-  width: 100%;
-  bottom: 5px;
-}
-
-.nav {
-  height: 40px;
-}
-
-.footer {
-  height: 30px;
-}
-.footer .socialicon {
+header .ham_menu label .ham_container span {
+  position: relative;
+  top: 0;
+  display: block;
   height: 3px;
+  border-radius: 1.5px;
+  background-color: #fbfafa;
+  transition: transform 0.2s ease-in-out, top 0.2s ease-in-out 0.2s;
+}
+header .ham_menu label .ham_container span:nth-child(2) {
+  top: 10px;
+}
+header .ham_menu #toggle:checked + label .ham_container span:nth-child(1) {
+  top: 8px;
+  transform: rotate(45deg);
+  transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+}
+header .ham_menu #toggle:checked + label .ham_container span:nth-child(2) {
+  top: 5px;
+  transform: rotate(-45deg);
+  transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+}
+header .ham_menu ul {
+  width: 100vm;
+  height: calc(100vh - 48px);
+  padding: 0 50px;
+  transform: scaleX(0);
+  transition: all 0.4s ease-in-out;
+  transform-origin: 0 50%;
+  background-color: #1d1d1d;
+  opacity: 0;
+}
+header .ham_menu ul li {
+  list-style: none;
+  height: 50px;
+  line-height: 50px;
+  color: #ccc6c6;
+  font-size: 18px;
+}
+header .ham_menu ul li:nth-child(-n+3) {
+  border-bottom: 1px solid rgb(255, 212, 41);
+}
+header .ham_menu #toggle:checked ~ ul {
+  transform: scale(1);
+  opacity: 1;
+}
+header .ham_menu #toggle:checked + label .ham_container span:nth-child(2) {
+  top: 5px;
+  transform: rotate(-45deg);
+  transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
 }
 
 /*# sourceMappingURL=style.css.map */
