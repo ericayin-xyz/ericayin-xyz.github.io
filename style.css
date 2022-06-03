@@ -1,90 +1,208 @@
 @import url("http://fonts.cdnfonts.com/css/clash-display?styles=106289");
+@media screen and (min-width: 375px) {
+  .container {
+    width: 365px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Clash Display", sans-serif, Helvetica, Arial;
+  color: whitesmoke;
+  text-decoration: none;
+}
+* ul {
+  list-style: none;
 }
 
 body {
-  font-family: "Clash Display", sans-serif, Helvetica, Arial;
-  width: 100vw;
   font-size: 14px;
-  background-color: #141617;
-  color: #e6dfdf;
+  background-color: #111315;
   line-height: 1.3;
 }
-
-header .ham_menu {
-  width: 100vm;
-  height: 48px;
-  background-color: rgba(205, 205, 191, 0.083);
+body .nav-b {
+  display: flex;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  top: 0;
+  background-color: #111315;
 }
-header .ham_menu #toggle {
+body .nav-b .logo_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  margin-top: 8px;
+  margin-left: 20px;
+}
+body .nav-b .logo_container .logo {
+  width: 38px;
+  text-align: center;
+}
+body .nav-b .name {
+  flex: 1;
+  text-align: center;
+  line-height: 60px;
+  height: 100%;
+  text-decoration: none;
+  font-size: 1.65 vmax;
+  color: whitesmoke;
+}
+body .nav-b .ham_menu {
+  height: 48px;
+  margin-top: 13px;
+}
+body .nav-b .ham_menu #toggle {
   display: none;
 }
-header .ham_menu label {
+body .nav-b .ham_menu label {
   display: block;
   width: 48px;
   height: 48px;
   cursor: pointer;
 }
-header .ham_menu label .ham_container {
+body .nav-b .ham_menu label .ham_container {
   position: relative;
-  top: 17px;
+  top: 10px;
   left: 14px;
   width: 25px;
   height: 20px;
 }
-header .ham_menu label .ham_container span {
+body .nav-b .ham_menu label .ham_container span {
   position: relative;
   top: 0;
   display: block;
   height: 3px;
   border-radius: 1.5px;
-  background-color: #fbfafa;
+  background-color: whitesmoke;
   transition: transform 0.2s ease-in-out, top 0.2s ease-in-out 0.2s;
 }
-header .ham_menu label .ham_container span:nth-child(2) {
+body .nav-b .ham_menu label .ham_container span:nth-child(2) {
   top: 10px;
 }
-header .ham_menu #toggle:checked + label .ham_container span:nth-child(1) {
+body .nav-b .ham_menu #toggle:checked + label .ham_container span:nth-child(1) {
   top: 8px;
   transform: rotate(45deg);
   transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
 }
-header .ham_menu #toggle:checked + label .ham_container span:nth-child(2) {
+body .nav-b .ham_menu #toggle:checked + label .ham_container span:nth-child(2) {
   top: 5px;
   transform: rotate(-45deg);
   transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
 }
-header .ham_menu ul {
-  width: 100vm;
+body .nav-b .ham_menu ul {
+  width: 100%;
+  left: 0;
+  top: 48px;
   height: calc(100vh - 48px);
-  padding: 0 50px;
-  transform: scaleX(0);
+  padding: 15% 0;
+  transform: scaleX(1);
   transition: all 0.4s ease-in-out;
-  transform-origin: 0 50%;
-  background-color: #1d1d1d;
+  transform-origin: 0 -50%;
+  background-color: #111315;
   opacity: 0;
 }
-header .ham_menu ul li {
+body .nav-b .ham_menu ul li {
   list-style: none;
-  height: 50px;
-  line-height: 50px;
-  color: #ccc6c6;
+  height: 70px;
+  line-height: 70px;
+  color: whitesmoke;
+  text-decoration: none;
   font-size: 18px;
+  text-align: center;
 }
-header .ham_menu ul li:nth-child(-n+3) {
-  border-bottom: 1px solid rgb(255, 212, 41);
+body .nav-b .ham_menu ul li :hover {
+  color: #111315;
+  background-color: whitesmoke;
 }
-header .ham_menu #toggle:checked ~ ul {
+body .nav-b .ham_menu ul li a {
+  display: block;
+  justify-items: end;
+  text-decoration: none;
+  color: whitesmoke;
+  transition: all 0.3s ease-in-out;
+}
+body .nav-b .ham_menu ul li:nth-child(-n+3) {
+  border-bottom: 0.5px solid rgba(231, 231, 231, 0.2705882353);
+}
+body .nav-b .ham_menu #toggle:checked ~ ul {
   transform: scale(1);
   opacity: 1;
 }
-header .ham_menu #toggle:checked + label .ham_container span:nth-child(2) {
+body .nav-b .ham_menu #toggle:checked + label .ham_container span:nth-child(2) {
   top: 5px;
   transform: rotate(-45deg);
   transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+}
+
+.intro {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro .intro-content {
+  color: whitesmoke;
+  text-align: center;
+}
+.intro .intro-content h1 {
+  font-size: 4vmin;
+}
+.intro .intro-content .line {
+  width: 150px;
+  height: 4px;
+  background: red;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+.intro .intro-content h2 {
+  font-size: 8vmin;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.intro .intro-content .learnmore {
+  padding: 8px 15px;
+  background-color: rgb(161, 140, 114);
+  border-radius: 30px;
+  color: whitesmoke;
+}
+
+.about .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cadetblue;
+  height: 50vh;
+  width: 100vw;
+  flex-basis: 50%;
+  padding: 8rem;
+}
+.about .title h1 {
+  font-size: 20vw;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  color: whitesmoke;
+}
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+}
+.navbar .nav-links li {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
