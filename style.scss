@@ -2,13 +2,14 @@ $primary1:whitesmoke;
 $primary2:#111315;
 $primary3:rgb(218, 218, 218);
 $primary4:green;
-$primary5:#eabd46;
+$primary5:#a5a5a5;
 
 $title:7vmin;
 $fontsize:3vmin;
 $normal:15px;
 
 $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-title:'Clash Display';
 
 
 
@@ -23,7 +24,8 @@ $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 //     }
 
 
-@import url('http://fonts.cdnfonts.com/css/clash-display?styles=106289');
+@import url('http://fonts.cdnfonts.com/css/clash-display?styles=106287');
+@import url('http://fonts.cdnfonts.com/css/clash-display?styles=106285');
 
 @mixin buttom {
     background: $primary2;
@@ -49,7 +51,7 @@ $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    h1, h2, h3, h4, h5 {
+    h1, h2, h3, h4, h5, span {
         font-family: 'Clash Display', sans-serif,Helvetica, Arial;
     }
     p {
@@ -68,6 +70,8 @@ body {
     background-color: $primary3;
     background-position: bottom;
 
+
+    
 }
 // html {
 //     overflow: hidden;
@@ -104,6 +108,8 @@ section {
             display: block;
             padding: 6vh 0;
             text-decoration: none;
+            font-family: 'Clash Display';
+            font-weight: 600;
             font-size: 6vmin;
             border-bottom: 1px solid $primary4;
             
@@ -216,50 +222,25 @@ section {
 }
 
 .line {
-    width: 43vmin;
-            height: 6px;
+    width: 41vmin;
+            height: 3px;
             background-color: $primary4;
             margin: 10px auto;
             border-radius: 5px;
+            margin-top: -7px;
+            margin-bottom: 65px;
 }
 
 .title {
     text-align: center;
     position: relative;
     font-size: $title;
-    padding-bottom: 20px;
+
     
 }
 
+// form - get in touch
 .contact {
-    .contact-info {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; 
-    
-    
-        .item {
-            height: 100px;
-            padding: 0 30px;
-            // background-color: $primary4;
-            text-align: center;
-            align-items: center;
-            display: flex;
-            cursor: pointer;
-            transition: .2s ease-in-out;  
-        }
-    
-        .item:hover {
-            background-color: $primary2;
-        }
-        img {
-            display: block;
-            
-            height: 35px;
-        }
-    
-    }
-    
     .contact-form {
         display: flex;
         justify-content: space-between;
@@ -297,6 +278,7 @@ section {
             font-size: $fontsize;
             letter-spacing: 2px;
             border: 1px solid $primary4;
+            border-radius: 30px;
             padding: 0;
             margin-top: 30px;
             cursor: pointer;
@@ -307,20 +289,83 @@ section {
     }
     
 }
+// form - get in touch - end
 
 
-
-
+//----------------------------footer-------------
 footer {
+    bottom: 0;
     width: 100%;
-    height: 200px;
-    padding: 20px 80px;
-    margin: 0;
-    background-color: $primary4;
+    height: 170px;
+    padding: 20px 0;
+    background-color: $primary2;
     text-align: center;
-}
 
-// homepage start
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; 
+    
+        .item {
+            height: 50px;
+            padding: 10px 10px;
+            border-radius: 40px;
+            margin: 15px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+            transition: .3s ease-in-out;  
+            color: $primary1;
+        }
+    
+        .item:hover {
+            background-color: $primary4;
+        }
+        img {
+            display: block;
+            height: 30px;
+        }
+    
+    }
+    .copyright {
+        margin-top: 20px;
+        color: $primary3;
+        letter-spacing: 2px;
+        font-family: $font-family;
+        font-size: 10px;
+
+         a {
+             font-family: $font-family;
+             color: $primary3;
+             font-size: 10px
+             
+   
+
+         }
+    }
+// back to top buttom
+    .arrowup {
+        position: fixed;
+        z-index: 999;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        font-size: 13px;
+        font-family: $font-family;
+        letter-spacing: 2px;
+        color: $primary1;
+        outline: none;
+        background-color: $primary2;
+        border: 3px solid $primary4;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+}
+//footer end
+// homepage
 header {
     height: 100vh;
     width: 100vw;
@@ -364,8 +409,166 @@ header {
     }
 }
 
+//----------------------------about-------------
 
-// work start
+
+.send-email {
+    text-align: center;
+    height: 220px;
+    padding: 40px;
+    p {
+        font-weight: 200;
+        margin-bottom: 50px;
+    }
+    h1 {
+        font-weight: 400;
+    }
+    .line {
+        height: 1.7px;
+        width: 45vmin;
+        margin: -30px auto;
+    }
+
+// 3 social icons
+    .contact-info {
+        display: flex;
+        justify-content: center;
+    
+        .item {
+            height: 27px;
+            width: 27px;
+            padding: 15px 15px;
+            border-radius: 20px;
+            margin: 80px 20px;
+            color: $primary1;
+            background-color: $primary2;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            cursor: pointer;
+            transition: .3s ease-in-out;     
+        }
+    
+        img {
+            display: block;
+            height: 20px;
+            align-items: center;
+        }
+    
+    }
+
+}
+// about footer
+.footer-otherpages{
+    height: 90px;
+}
+// about end
+
+//----------------------------blog-------------
+#blog {
+    
+    border-bottom: 1px solid $primary2;
+
+    .blog-heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        span {
+            font-family: $font-family-title;
+            font-weight: 400;
+            h3 {
+                font-size: $title;
+            }
+        }
+    }
+
+    .blog-container {  
+        margin: 20px 0px;
+        flex-wrap: wrap;
+
+        .blog-box {
+            width: 100%;
+            background-color: $primary1;  
+
+            .blog-img {
+                width: 100%;
+                height: auto;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+
+                }
+            }
+        }
+
+        .blog-text {
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+
+            span {
+                font-size: 1.3vmin;
+                font-family: $font-family;
+                color: $primary5;
+                margin-bottom: 7px;
+            }
+
+            p {
+                display: -webkit-box;
+                font-size: $normal;
+                color: $primary5;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                margin: 20px 0;
+            }
+
+            .readmore {
+                color: $primary4;
+                letter-spacing: .5px;
+                font-size: 1.8vmin;
+                text-decoration-line: underline;
+                padding: 6px auto;
+            }
+
+            .readmore:hover {
+                color: $primary2;
+                transition: all .2s ease-in-out;
+            }
+        }
+
+        .blog-text,
+        .blog-title {
+            color: $primary2;
+            font-weight: 400;
+            font-family: $font-family-title;
+            font-size: 1.3rem;
+        }
+        .blog-text,
+        .blog-title:hover {
+            color: $primary4;
+            transition: all .3s ease-in-out;
+        }
+
+
+
+
+        
+    }
+
+
+}
+
+
+
+
+
+//----------------------------work-------------
 
 
 
@@ -423,104 +626,13 @@ header {
 
 }
 
-// .work-top {
-//     background-color: #1113151c;
-//     overflow: hidden;
-
-//     .title {
-//         text-align: center;
-//         font-size: 4vmin;
-//         color: $primary4;
-//     }
-//     .line {
-//         width: 100%;
-//         height: 4px;
-//         background-color: $primary4;
-//         margin: 100px auto 20px auto;
-//         border-radius: 5px;
-//     }
-//     .row {
-//         display: flex;
-//         align-items: center;
-//         width: 100%;
-//         justify-content: space-between;
-//         background: $primary4;
-                
-//         .col {
-//             display: flex;
-//             flex-direction: column;
-//             align-items: center;
-//             width: 40vw;
-
-
-//             h4 {
-//                 font-size: 3vmin;
-//                 margin: 20px auto;
-//             }
-
-//             p {
-//                 font-size: 13px;
-//                 padding: 0 40px;
-//             }
-
-//         }
-
-        
-//     }
-    
-    
-// }
-
 
 
 
 
 // ham_navbar
 @media screen and (min-width: 768px) {
-    .navbar {
-        border-bottom: 2px solid $primary4;
-
-        .menu {
-            clear: none;
-            float: right;
-            transform: none;
-            height: 60px;
-            margin-right: 3vw;
-            padding: 8px;
-            
-
-            ul {
-                height: 0;
-                text-align: center;
-            }
-
-            li {
-                float: left;
-                display: block;
-                align-items: center;
-                
-                :nth-child(1) {
-                    padding-top: 15px;
-                }
-        
-                a {
-                    padding: 15px 30px;
-                    border-bottom: none;
-                    font-size: 20px;
-                    
-                }
-            }
-
-
-            
-
-            
-        }
-
-        .menu-icon {
-            display: none;
-        }
-    }
+    
 
     .part1 {
        
@@ -554,17 +666,110 @@ header {
     }
 
 
+// homepage
+.navbar {
+    bottom: 0;
+    border-bottom: 1.5px solid $primary4;
+
+    .menu {
+        clear: none;
+        float: right;
+        
+        transform: none;
+        height: 60px;
+        margin-right: 3vw;
+        padding: 8px;
+        
+
+        ul {
+            height: 0;
+            text-align: center;
+            
+        }
+
+        li {
+            float: left;
+            display: block;
+            align-items: center;
+            width: 120px;
+            
+            
+            
+            :nth-child(1) {
+                padding-top: 15px;
+            }
+    
+            a {           
+                border-bottom: none;
+                font-size: 20px;
+                border-radius: 35px; 
+                transition: all .2s ease;
+                
+            }
+        }  
+    }
+    .menu-icon {
+        display: none;
+    }
+}
+
+// ----------------------blog---------------------------
+#blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+
+    .blog-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+        flex-wrap: wrap;
+
+        .item-empty {
+            visibility: hidden;
+        }
+
+        .blog-box {
+            width: 380px;
+            margin: 20px;
+        }  
+
+        .blog-box:hover {
+            transform: scale(1.04);
+            box-shadow: 1px 5px 15px rgba(0,0,0,0.2);
+        }
+        
+    }
+}
+
 .contact {
+
+    .inner-width {
+        max-width: 800px;
+    }
+    .title {
+        margin-top: 150px;
+    }
+    .line {
+                height: 5px;
+
+                margin-top: -17px;
+                margin-bottom: 10vh;
+    }
     .contact-form {
+       margin-top: 60px;
         .contact-btn {
-            width: 200px;
+            width: 180px;
             color: $primary1;
-            background-color: $primary2;
+            background-color: $primary4;
             font-size: 16px;
             letter-spacing: 4px;
             border-radius: 50px;
-            padding: 50px auto;
-            margin-top: 50px;
+            padding: 80px auto;
+            margin: 40px auto;
             margin-left: calc(50% - 100px);
             cursor: pointer;
             transition: .2 ease-in-out;
@@ -572,11 +777,87 @@ header {
     
     
         .contact-btn:hover {
-            background-color: $primary4;
+            background-color: $primary2;
         }
     }
     
 }
+
+footer {
+    .arrowup {
+        position: fixed;
+        z-index: 999;
+        bottom: 8vh;
+        right: 4vw;
+        width: 60px;
+        height: 60px;
+        line-height: 55px;
+        font-family: $font-family;
+        letter-spacing: 2px;
+        color: $primary1;
+        outline: none;
+        background-color: $primary2;
+        border: 3px solid $primary4;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .arrowup:hover {
+        background-color: $primary4;
+        color: $primary1;
+        font-weight: 600;
+    }
+}
+// homepage end
+
+
+// about (send an email)
+.send-email {
+    text-align: center;
+    height: 390px;
+    padding: 40px;
+    p {
+        margin-bottom: 90px;
+    }
+    .line {
+        margin: -37px auto;
+        margin-bottom: 20px;
+    }
+
+// 3 social icons
+    .contact-info {
+        display: flex;
+        justify-content: center;
+    
+        .item {
+            height: 27px;
+            width: 27px;
+            padding: 15px 15px;
+            border-radius: 20px;
+            margin: 80px 20px;
+            color: $primary1;
+            background-color: $primary2;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            cursor: pointer;
+            transition: .3s ease-in-out;     
+        }
+    
+        .item:hover {
+            background-color: $primary4;
+        }
+    
+    
+    }
+
+}
+
+}
+
+@media screen and (max-width: 1300px) {
+    .blog-box {
+        width: 300px;
+    }
 
 }
 
