@@ -1,15 +1,15 @@
 $primary1:whitesmoke;
 $primary2:#111315;
-$primary3:rgb(218, 218, 218);
+$primary3:#e5e5e1;
 $primary4:green;
-$primary5:#a5a5a5;
+$primary5:#bfbfbf75;
 
 $title:7vmin;
 $fontsize:3vmin;
-$normal:15px;
+$normal:13px;
 
-$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$font-family-title:'Clash Display';
+$font-family: sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana;
+$font-family-title:'Clash Display', 'Segoe UI', Arial;
 
 
 
@@ -27,14 +27,17 @@ $font-family-title:'Clash Display';
 @import url('http://fonts.cdnfonts.com/css/clash-display?styles=106287');
 @import url('http://fonts.cdnfonts.com/css/clash-display?styles=106285');
 
-@mixin buttom {
-    background: $primary2;
-            color: $primary1;
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-size: 2.5vmin;
-            font-family: Verdana, sans-serif, Arial;
-            letter-spacing: 2px;
+@mixin button {
+        background-color: transparent;
+        color: $primary4;
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: $normal;
+        text-decoration: none;
+        border: 1px solid $primary4;
+        padding: 13px 30px;
+        border-radius: 30px;
+        transition: .2s ease;
 }
 @mixin buttom-m {
             color: $primary2;
@@ -45,7 +48,12 @@ $font-family-title:'Clash Display';
             font-family: Verdana, sans-serif, Arial;
             letter-spacing: 2px;           
 }
-
+@mixin p { 
+    letter-spacing: 1px;
+                line-height: 23px;
+                font-size: $normal;
+                font-weight: 200;   
+}
 
 * {
     margin: 0;
@@ -64,7 +72,8 @@ $font-family-title:'Clash Display';
     }
 }
 
-
+// ----------------------------@media----->>>>>>320px-------------------------
+@media screen and (min-width: 320px) {
 
 body {
     background-color: $primary3;
@@ -73,18 +82,12 @@ body {
 
     
 }
-// html {
-//     overflow: hidden;
-// }
+
 section {
     width: 100%;
     margin: 100px auto;
 }
-.inner-width {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 40px;
-}
+
 .navbar {
     background-color: $primary3;
     height: 73px;
@@ -235,9 +238,71 @@ section {
     text-align: center;
     position: relative;
     font-size: $title;
+    
 
     
 }
+//----------------------------home------------->>>>>>320px
+
+//part2......work........
+.home-work {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    background-color: bisque;
+
+    .home-work-row {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+
+        .home-work-col {
+            width: 300px;
+            flex-basis: 30%;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .layer {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            h3 {
+                width: 100%;
+                font-weight: 600;
+                font-size: 26px;
+                color: $primary1;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                opacity: 0;
+                transition: 0.5s;
+                letter-spacing: 2px;
+            }   
+        }
+
+        .layer:hover {
+            background: rgba(33, 33, 33, 0.5);
+        }
+        .layer:hover h3 {
+            bottom: 13%;
+            opacity: 1;
+        }
+        
+    }
+}
+
 
 // form - get in touch
 .contact {
@@ -292,7 +357,7 @@ section {
 // form - get in touch - end
 
 
-//----------------------------footer-------------
+//----------------------------footer------------->>>>>>320px
 footer {
     bottom: 0;
     width: 100%;
@@ -362,6 +427,7 @@ footer {
         border: 3px solid $primary4;
         border-radius: 25px;
         cursor: pointer;
+        transition: all .3s ease;
     }
 }
 //footer end
@@ -409,31 +475,182 @@ header {
     }
 }
 
-//----------------------------about-------------
+//----------------------------about---start---------->>>>>>320px
+#about-top {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 0;
 
+    .about-top-container {
+        text-align: center;
+        
+
+        .aboutimage {
+            border-radius: 50%;
+            margin-top: 16vh;
+            height: auto;
+            width: 60%;
+        }
+        .about-text {
+            padding: 100px 50px 0px 50px;
+
+            h1 {
+                font-size: $title;
+                
+            }
+
+            .line {
+                height: 1px;
+                width: 33vmin;
+                margin-top: -15px;
+            }
+
+            h2 {
+                visibility: hidden;
+            }
+
+            h3 {
+                        font-size: 20px;
+                        line-height: 36px;
+                        font-weight: 200;
+                        text-transform: capitalize;
+                        border-left: 1px solid $primary4;
+                        border-right: 1px solid $primary4;
+                        span {
+                            text-decoration-line: underline;
+                        }
+                    }
+            
+            p {
+                @include p();
+                margin-top: 60px;
+                margin-bottom: 80px;
+            }
+
+            a {
+                @include button()
+            }
+            a:hover {
+                background-color: $primary4;
+                color: $primary1;
+                cursor: pointer;
+                
+            }
+        }
+    }
+}
+
+#personal-info {
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background-color: $primary5;
+    padding: 30px auto;
+    border-bottom: 6px solid $primary2;
+
+    .personal {
+        padding-top: 120px;
+    }
+
+    .personal:nth-child(2) {
+        background-color: $primary3;
+    }
+    div {
+        width: 100%;
+        padding: 30px 30px;
+        
+
+        h3 {
+            display: block;
+            align-items: center;
+            height: 30px;
+            font-size: 4vmin;
+            text-transform: capitalize;
+            padding: 10px 50px;
+            border: 0 30px;
+            margin-bottom: 30px;
+
+            span {
+                font-size: 4.5vmin;
+                margin-bottom: 10px;
+                font-weight: 200;
+            }
+        }
+
+        p {
+            @include p();
+            padding: 20px 60px;
+            margin-top: 30px;
+            margin-bottom:100px;
+        }
+
+    }
+
+
+    .icon-container {
+        display: flex;
+        justify-content: center;
+
+        .icon-skill {
+            height: 27px;
+            width: 27px;
+            border-radius: 8px;
+            margin: 20px 15px 0 15px;
+            background-color: $primary2;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            img {
+                display: block;
+                height: 25px;
+                align-items: center;
+            }
+        }
+    }
+
+}
 
 .send-email {
+
     text-align: center;
     height: 220px;
-    padding: 40px;
-    p {
-        font-weight: 200;
-        margin-bottom: 50px;
+    .inner-width {
+       
+            margin: auto;
+            padding: 0 40px;
+    
+        p {
+            font-size: 2.3vmin;
+            font-weight: 200;
+            margin-bottom: 50px;
+        }
+    
+        h1 {
+            font-size: 8vmin;
+            font-weight: 00;
+            margin: 20px
+        }
+    
+        
+        .line {
+            height: 1.7px;
+            width: 53vmin;
+            margin-top: -37px;
+            margin-bottom: -5px;
+        }
+       
+       
     }
-    h1 {
-        font-weight: 400;
-    }
-    .line {
-        height: 1.7px;
-        width: 45vmin;
-        margin: -30px auto;
-    }
+    
 
 // 3 social icons
     .contact-info {
         display: flex;
+        display: a;
         justify-content: center;
-    
+
         .item {
             height: 27px;
             width: 27px;
@@ -458,15 +675,16 @@ header {
     }
 
 }
-// about footer
+// about-footer
 .footer-otherpages{
     height: 90px;
 }
-// about end
+//----------------------------about---end---------->>>>>>320px
 
-//----------------------------blog-------------
+//----------------------------blog------------->>>>>>320px
 #blog {
-    
+    // padding: auto 30px;
+    border-top: 1px solid $primary2;
     border-bottom: 1px solid $primary2;
 
     .blog-heading {
@@ -474,13 +692,19 @@ header {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        border-bottom: 1px solid $primary2;
+        width: 100%;
+        padding: 30px 0;
+        margin-bottom: 20px;
 
         span {
-            font-family: $font-family-title;
+            font-size: 2.3vmin;
+            font-weight: 200;
+            
+        }
+        h3 {
+            font-size: 8vmin;
             font-weight: 400;
-            h3 {
-                font-size: $title;
-            }
         }
     }
 
@@ -501,7 +725,6 @@ header {
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
-
                 }
             }
         }
@@ -509,35 +732,45 @@ header {
         .blog-text {
             display: flex;
             flex-direction: column;
-            padding: 30px;
+            padding: 40px;
+            margin: 20px 10px;
 
             span {
-                font-size: 1.3vmin;
+                font-size: 1.9vmin;
                 font-family: $font-family;
                 color: $primary5;
                 margin-bottom: 7px;
+            }
+            .blog-title {
+                font-size: 5vmin;
             }
 
             p {
                 display: -webkit-box;
                 font-size: $normal;
+                line-height: 20px;
                 color: $primary5;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
-                margin: 20px 0;
+                margin-top: 20px;
+                margin-bottom: 30px;
             }
 
             .readmore {
                 color: $primary4;
                 letter-spacing: .5px;
-                font-size: 1.8vmin;
-                text-decoration-line: underline;
-                padding: 6px auto;
+                font-size: 2.9vmin;
+                text-align: center;
+                padding: 8px 0;
+                margin: 20px 32%;
+                border: 1px solid $primary4;
+                border-radius: 50px;
             }
 
             .readmore:hover {
-                color: $primary2;
+                color: $primary1;
+                background: $primary4;
                 transition: all .2s ease-in-out;
             }
         }
@@ -568,10 +801,7 @@ header {
 
 
 
-//----------------------------work-------------
-
-
-
+//----------------------------work------------->>>>>>320px
 .part1 {
     .workimage {
         display: flex;
@@ -628,13 +858,11 @@ header {
 
 
 
+}
 
-
-// ham_navbar
+// ----------------------------@media----->>>>>>768px-------------------------
 @media screen and (min-width: 768px) {
-    
-
-    .part1 {
+.part1 {
        
     
         .workintro {
@@ -658,15 +886,14 @@ header {
             }
         }
 
-    }
-    .buttom:hover {
+}
+
+.buttom:hover {
         color: $primary2;
             background: $primary3;
             transform: translateY(2);
-    }
+}
 
-
-// homepage
 .navbar {
     bottom: 0;
     border-bottom: 1.5px solid $primary4;
@@ -713,35 +940,55 @@ header {
     }
 }
 
-// ----------------------blog---------------------------
+// ----------------------blog--------------------------->>>>>>768px
 #blog {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 40px;
+
+    .blog-heading {
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 15px;
+
+        span {
+            font-size: 2vmin;
+        }
+    }
 
     .blog-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 30px 0;
+        padding: 0 50px;
+        margin: 50px 40px;
         flex-wrap: wrap;
 
-        .item-empty {
-            visibility: hidden;
-        }
-
         .blog-box {
-            width: 380px;
-            margin: 20px;
-        }  
+            margin: 30px;
+            width: 90%;
 
+            .blog-text {
+                padding: 30px 50px;
+
+                span {
+                    font-size: 1.3vmin;
+                }
+            }
+
+            .blog-img {
+                height: 350px;
+            }
+            .readmore {
+                font-size: 2vmin;
+                margin-bottom: 20px;
+            }
+        }
         .blog-box:hover {
             transform: scale(1.04);
             box-shadow: 1px 5px 15px rgba(0,0,0,0.2);
         }
-        
     }
 }
 
@@ -809,55 +1056,318 @@ footer {
 }
 // homepage end
 
+// --------------------------about--------------------------->>>>>>768px
 
-// about (send an email)
-.send-email {
+// about - Part1 - into - START
+#about-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 50px;
+
+    .about-top-container {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .aboutimage {
+            height: auto;
+            width: 260px;
+        }
+        .about-text {
+            width: 550px;
+            margin-left: 30px;
+            text-align: left;
+
+            h1 {
+                font-size: $title;
+                font-weight: 400;
+            }
+            
+            .line {
+            height: 1.2px;
+            width: 33vmin;
+            margin: -25px 0;
+            margin-bottom: 0px;
+            }
+
+            h2 {
+                visibility:visible;
+                font-size: 21px;
+                letter-spacing: 1px;
+                margin-top: 70px;
+                margin-bottom: 20px;
+                }
+
+            h3 {
+                border: none;
+                font-weight: 200;
+                letter-spacing: 1px;
+                font-size: 18px;
+                margin-bottom: 8px;
+                text-transform: capitalize;
+                line-height: 28px;
+                span {
+                    color: $primary4;
+                }
+                .hello {
+                    display: none;
+                }
+            }
+            
+            p {
+                @include p();
+                padding-left: 35px;
+                border-left: 1px solid $primary4;
+                margin: 40px auto;
+            }
+
+            a {
+                @include button(); 
+            }
+            a:hover {
+                background-color: $primary4;
+                color: $primary1;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+                
+            }
+        }
+    }
+}
+// about - Part1 - into - end
+
+// about - part2 - personal-info - START
+#personal-info {
+    overflow: hidden;
+    height: auto;
+    width: 100%;
     text-align: center;
-    height: 390px;
-    padding: 40px;
-    p {
-        margin-bottom: 90px;
-    }
-    .line {
-        margin: -37px auto;
-        margin-bottom: 20px;
+
+    .aboutimage {
+        border-radius: none;
     }
 
-// 3 social icons
-    .contact-info {
+    div {
+        width: 100%;
+        padding: auto 30px;
+        margin: 30px 0;
+        
+
+        h3 {
+            
+            font-weight: 400;
+            height: 30px;
+            font-size: 2.7vmin;
+            margin-bottom: 50px;
+
+            span {
+                color: $primary4;
+                font-size: 2.6vmin;
+                font-weight: 400;
+                text-decoration-style: dotted;
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            padding: 20px 110px;
+        }
+
+    }
+    .icon-container {
         display: flex;
         justify-content: center;
-    
-        .item {
-            height: 27px;
-            width: 27px;
-            padding: 15px 15px;
-            border-radius: 20px;
-            margin: 80px 20px;
-            color: $primary1;
+
+        .icon-skill {
+            height: 33px;
+            width: 33px;
+            border-radius: 8px;
+            margin: 20px 15px 0 15px;
             background-color: $primary2;
             display: flex;
             justify-content: center;
             align-items: center; 
+            img {
+                display: block;
+                height: 25px;
+                align-items: center;
+            }
+        }
+    }
+    .line2 {
+        height: 10px;
+        background-color: $primary2;
+    }
+
+}
+// about - part2 - personal-info - END
+
+// about - part3 - send an email - START
+.send-email {
+    height: 330px;
+
+    .inner-width {
+        width: 100%;
+        // padding: 10px auto;
+
+        p {
+            margin-bottom: 70px;
+            margin-top: -20px;
+            font-size: 1.7vmin;
+            letter-spacing: 1px;
+        }
+        h1 {
+            font-size: 6vmin;
+            font-weight: 400;
+            
+        }
+        .line {
+            width: 40vmin;
+            margin-top: -41px;
+      
+        }
+        h1:hover {
+            color: $primary4;
             cursor: pointer;
-            transition: .3s ease-in-out;     
+            transform: scale(115%);
+            font-weight: 200;
+        }
+        h1:hover~ .line {
+            background-color: $primary2;
+            transform: scale(110%);
+        }
+    }
+
+        // 3 social icons
+        .contact-info {
+            padding-top: 30px;
+    
+            .item {
+                height: 30px;
+                width: 30px;
+                padding: 17px 17px;
+                border-radius: 20px;
+                margin-top: 130px;
+                color: $primary1;
+                background-color: $primary2;
+                cursor: pointer;
+                transition: .3s ease-in-out;     
+            }
+        
+            .item:hover {
+                background-color: $primary4;
+            }
+        
+        
+        }
+
+    }
+// about - part3 - send an email - END
+
+
+
+
+}
+// END-------------------------about--------------------------->>>>>>768px
+
+
+// ----------------------------@media----->>>>>>1060px------------------------
+@media screen and (min-width: 1060px) {
+    #blog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .blog-heading {
+            padding: 13px 0;
+            margin-top: 13px;
+    
+            span {
+                font-size: 1.6vmin;
+            }
         }
     
-        .item:hover {
-            background-color: $primary4;
+        .blog-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+    
+            .item-empty {
+                visibility: hidden;
+            }
+    
+            .blog-box {
+                margin: 30px;
+                width: 380px;
+    
+                .blog-img {
+                    height: 230px;
+                }
+    
+                .blog-text {
+                    display: flex;
+                    margin: 0px;
+                    padding: 30px 40px;
+    
+                    span {
+                        font-size: 1vmin;
+                        letter-spacing: 1px;
+                    }
+                    .blog-title {
+                        font-size: 25px;
+                        line-height: 95%;
+                    }
+                    p {
+                        -webkit-line-clamp: 2;
+                        margin-bottom: 20px;
+                        line-height: 17px;
+                    }
+                    .readmore {
+                        letter-spacing: .5px;
+                        font-size: 1.8vmin;
+                        text-align: left;
+                        text-decoration: underline;
+                        padding: 0;
+                        margin: 10px 0;
+                        border: none;
+                        border-radius: 0;
+                    }
+    
+                    
+            
+                }
+            }  
+    
+            .blog-box:hover {
+                transform: scale(1.04);
+                box-shadow: 1px 5px 15px rgba(0,0,0,0.2);
+            }
+            
         }
-    
-    
     }
 
 }
+    
 
-}
+// ----------------------------@media----->>>>>>1600px------------------------
+@media screen and (min-width: 1600px) {
+    .blog-container {  
+        max-width: 1600px;
+            .blog-title {
+                font-size: 1vmin;
+            } 
+    }
+    
 
-@media screen and (max-width: 1300px) {
-    .blog-box {
-        width: 300px;
+        
     }
 
-}
+    
+
 
