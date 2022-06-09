@@ -19,17 +19,16 @@
 
 @media screen and (min-width: 320px) {
   body {
-    background-color: #e5e5e1;
+    background-color: #e4e2da;
     background-position: bottom;
   }
 
   section {
     width: 100%;
-    margin: 100px auto;
   }
 
   .navbar {
-    background-color: #e5e5e1;
+    background-color: #e4e2da;
     height: 73px;
     position: fixed;
     top: 0;
@@ -39,23 +38,23 @@
     z-index: 3;
   }
   .navbar ul {
-    padding: 0;
+    display: block;
+    padding-top: 130px;
+    height: 100vh;
     text-align: center;
     list-style: none;
     overflow: hidden;
   }
   .navbar ul a {
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-size: 40px;
     display: block;
-    padding: 6vh 0;
+    padding: 4vh 0;
     text-decoration: none;
-    font-family: "Clash Display";
-    font-weight: 600;
-    font-size: 6vmin;
-    border-bottom: 1px solid green;
   }
   .navbar ul a:hover {
-    background-color: green;
-    color: whitesmoke;
+    border: 1px solid green;
+    color: green;
   }
   .navbar .logo-container {
     float: left;
@@ -129,7 +128,7 @@
   .navbar .menu-btn:checked ~ .menu {
     height: 100vh;
     transform: scaleX(1);
-    background-color: #e5e5e1;
+    background-color: #e4e2da;
   }
   .navbar .menu-btn:hover ~ .menu-icon {
     transform: rotate(25deg);
@@ -150,7 +149,7 @@
 
   .line {
     width: 41vmin;
-    height: 3px;
+    height: 1.5px;
     background-color: green;
     margin: 10px auto;
     border-radius: 5px;
@@ -164,28 +163,97 @@
     font-size: 7vmin;
   }
 
+  header {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 15px;
+  }
+  header .header-content {
+    margin-top: 15vh;
+    padding: 50px;
+  }
+  header .header-content .line {
+    width: 100%;
+    height: 2px;
+    background-color: green;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+  header .header-content h1 {
+    font-size: 70px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+  header .header-content h4 {
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 80px;
+    line-height: 30px;
+    max-width: 90%;
+  }
+  header .header-content .about-buttom {
+    background-color: transparent;
+    color: green;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 400;
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid green;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: 0.2s ease;
+  }
+
   .home-work {
     width: 100%;
     margin: auto;
     text-align: center;
-    padding-top: 50px;
-    background-color: bisque;
+    padding-bottom: 100px;
   }
-  .home-work .home-work-row {
-    padding: 30px;
+  .home-work .work-heading {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid #111315;
+    border-bottom: 1px solid #111315;
+    width: 100%;
+    padding: 30px 0;
+    margin-bottom: 20px;
+  }
+  .home-work .work-heading p {
+    font-size: 3.2vmin;
+    font-weight: 200;
+    margin-bottom: 5px;
+    width: 70%;
+    font-family: "Clash Display", "Segoe UI", Arial;
+  }
+  .home-work .work-heading h1 {
+    font-size: 8vmin;
+    font-weight: 400;
+  }
+  .home-work .home-work-row {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
   }
   .home-work .home-work-row .home-work-col {
+    padding: 20px;
     width: 300px;
     flex-basis: 30%;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
+    border-radius: 30px;
   }
   .home-work .home-work-row .home-work-col img {
     width: 100%;
     height: 100%;
+    border-radius: 23px;
   }
   .home-work .home-work-row .layer {
     height: 100%;
@@ -208,17 +276,119 @@
     letter-spacing: 2px;
   }
   .home-work .home-work-row .layer:hover {
-    background: rgba(33, 33, 33, 0.5);
+    background: rgba(33, 33, 33, 0.3);
   }
   .home-work .home-work-row .layer:hover h3 {
-    bottom: 13%;
+    bottom: 35%;
     opacity: 1;
   }
 
+  #blog {
+    border-top: 1px solid #111315;
+    border-bottom: 1px solid #111315;
+  }
+  #blog .blog-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #111315;
+    width: 100%;
+    padding: 30px 0;
+    margin-bottom: 20px;
+  }
+  #blog .blog-heading span {
+    font-size: 3.2vmin;
+    font-weight: 200;
+    margin-bottom: 5px;
+  }
+  #blog .blog-heading h3 {
+    font-size: 8vmin;
+    font-weight: 400;
+  }
+  #blog .blog-container {
+    margin: 20px 0px;
+    flex-wrap: wrap;
+  }
+  #blog .blog-container .blog-box {
+    width: 100%;
+    background-color: #e4e2da;
+    border: 1px solid #111315;
+  }
+  #blog .blog-container .blog-box .blog-img {
+    width: 100%;
+    height: auto;
+  }
+  #blog .blog-container .blog-box .blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  #blog .blog-container .blog-text {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    margin: 20px 10px;
+  }
+  #blog .blog-container .blog-text span {
+    font-size: 1.9vmin;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    color: #acacac;
+    margin-bottom: 7px;
+  }
+  #blog .blog-container .blog-text .blog-title {
+    font-size: 5vmin;
+  }
+  #blog .blog-container .blog-text p {
+    display: -webkit-box;
+    font-size: 13px;
+    line-height: 20px;
+    color: #acacac;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  #blog .blog-container .blog-text .readmore {
+    color: green;
+    letter-spacing: 0.5px;
+    font-size: 2.9vmin;
+    text-align: center;
+    padding: 8px 0;
+    margin: 20px 32%;
+    border: 1px solid green;
+    border-radius: 50px;
+  }
+  #blog .blog-container .blog-text .readmore:hover {
+    color: whitesmoke;
+    background: green;
+    transition: all 0.2s ease-in-out;
+  }
+  #blog .blog-container .blog-text,
+#blog .blog-container .blog-title {
+    color: #111315;
+    font-weight: 200;
+    font-family: "Clash Display", "Segoe UI", Arial;
+    font-size: 1.3rem;
+  }
+  #blog .blog-container .blog-text,
+#blog .blog-container .blog-title:hover {
+    color: green;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .contact h1 {
+    font-family: "Clash Display", "Segoe UI", Arial;
+    font-weight: 400;
+    padding-top: 80px;
+  }
   .contact .contact-form {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 40px;
   }
   .contact .contact-form input,
 .contact .contact-form textarea {
@@ -230,6 +400,7 @@
     outline: none;
     padding: 15px;
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 200;
   }
   .contact .contact-form .namezone,
 .contact .contact-form .emailzone {
@@ -245,15 +416,17 @@
     background-color: transparent;
   }
   .contact .contact-form .contact-btn {
-    color: whitesmoke;
-    background-color: green;
-    font-size: 3vmin;
-    letter-spacing: 2px;
+    background-color: transparent;
+    color: green;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 400;
+    font-size: 13px;
+    text-decoration: none;
     border: 1px solid green;
+    padding: 13px 30px;
     border-radius: 30px;
-    padding: 0;
-    margin-top: 30px;
-    cursor: pointer;
+    transition: 0.2s ease;
+    margin: 50px auto;
   }
 
   footer {
@@ -290,14 +463,14 @@
   }
   footer .copyright {
     margin-top: 20px;
-    color: #e5e5e1;
+    color: #e4e2da;
     letter-spacing: 2px;
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
     font-size: 10px;
   }
   footer .copyright a {
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
-    color: #e5e5e1;
+    color: #e4e2da;
     font-size: 10px;
   }
   footer .arrowup {
@@ -307,53 +480,16 @@
     right: 30px;
     width: 50px;
     height: 50px;
-    line-height: 45px;
+    line-height: 49px;
     font-size: 13px;
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
     letter-spacing: 2px;
     color: whitesmoke;
     outline: none;
     background-color: #111315;
-    border: 3px solid green;
-    border-radius: 25px;
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
-
-  header {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-  }
-  header .header-content {
-    margin-top: 20vh;
-    text-align: center;
-  }
-  header .header-content h2 {
-    font-size: 3.5vmin;
-  }
-  header .header-content .line {
-    width: 30vmin;
-    height: 4px;
-    background-color: green;
-    margin: 10px auto;
-    border-radius: 5px;
-  }
-  header .header-content h1 {
-    font-size: 6vmin;
-    margin-top: 30px;
-    margin-bottom: 40px;
-  }
-  header .header-content .about-buttom {
-    background: #111315;
-    color: whitesmoke;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-size: 2.5vmin;
-    font-weight: 200;
   }
 
   #about-top {
@@ -366,13 +502,12 @@
     text-align: center;
   }
   #about-top .about-top-container .aboutimage {
-    border-radius: 50%;
-    margin-top: 16vh;
-    height: auto;
-    width: 60%;
+    border-radius: 10%;
+    margin-top: 13vh;
+    width: 35%;
   }
   #about-top .about-top-container .about-text {
-    padding: 100px 50px 0px 50px;
+    padding: 100px 50px 100px 50px;
   }
   #about-top .about-top-container .about-text h1 {
     font-size: 7vmin;
@@ -401,7 +536,7 @@
     line-height: 23px;
     font-size: 13px;
     font-weight: 200;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 80px;
   }
   #about-top .about-top-container .about-text a {
@@ -416,30 +551,26 @@
     border-radius: 30px;
     transition: 0.2s ease;
   }
-  #about-top .about-top-container .about-text a:hover {
-    background-color: green;
-    color: whitesmoke;
-    cursor: pointer;
-  }
 
   #personal-info {
     overflow: hidden;
     height: auto;
     width: 100%;
     text-align: center;
-    background-color: rgba(191, 191, 191, 0.4588235294);
+    background-color: rgba(149, 149, 146, 0.1960784314);
     padding: 30px auto;
     border-bottom: 6px solid #111315;
   }
   #personal-info .personal {
     padding-top: 120px;
+    border-bottom: 1px solid #111315;
   }
-  #personal-info .personal:nth-child(2) {
-    background-color: #e5e5e1;
+  #personal-info .personal:nth-child(3) {
+    border-bottom: none;
   }
   #personal-info div {
     width: 100%;
-    padding: 30px 30px;
+    padding: 25px 25px;
   }
   #personal-info div h3 {
     display: block;
@@ -453,7 +584,6 @@
   }
   #personal-info div h3 span {
     font-size: 4.5vmin;
-    margin-bottom: 10px;
     font-weight: 200;
   }
   #personal-info div p {
@@ -463,7 +593,7 @@
     font-weight: 200;
     padding: 20px 60px;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
   }
   #personal-info .icon-container {
     display: flex;
@@ -494,13 +624,13 @@
     padding: 0 40px;
   }
   .send-email .inner-width p {
-    font-size: 2.3vmin;
+    font-size: 11px;
     font-weight: 200;
     margin-bottom: 50px;
   }
   .send-email .inner-width h1 {
     font-size: 8vmin;
-    font-weight: 0;
+    font-weight: 400;
     margin: 20px;
   }
   .send-email .inner-width .line {
@@ -538,98 +668,119 @@
     height: 90px;
   }
 
-  #blog {
-    border-top: 1px solid #111315;
-    border-bottom: 1px solid #111315;
-  }
-  #blog .blog-heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-bottom: 1px solid #111315;
-    width: 100%;
-    padding: 30px 0;
-    margin-bottom: 20px;
-  }
-  #blog .blog-heading span {
-    font-size: 2.3vmin;
-    font-weight: 200;
-  }
-  #blog .blog-heading h3 {
-    font-size: 8vmin;
-    font-weight: 400;
-  }
-  #blog .blog-container {
-    margin: 20px 0px;
-    flex-wrap: wrap;
-  }
-  #blog .blog-container .blog-box {
-    width: 100%;
-    background-color: whitesmoke;
-  }
-  #blog .blog-container .blog-box .blog-img {
-    width: 100%;
+  #blog-content {
+    padding: auto 40px;
     height: auto;
+    display: block;
+    justify-content: space-around;
+    align-items: center;
   }
-  #blog .blog-container .blog-box .blog-img img {
+  #blog-content .blog-row .blog-col-1 {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    min-width: 300px;
+    margin-top: 70px;
   }
-  #blog .blog-container .blog-text {
+  #blog-content .blog-row .blog-col-1 h5 {
+    font-weight: 200;
+    margin-left: 30px;
+  }
+  #blog-content .blog-row .blog-col-1 h1 {
+    font-size: 53px;
+    font-weight: 200;
+    margin: 55px auto;
+    margin-left: 30px;
+  }
+  #blog-content .blog-row .blog-col-1 h4 {
     display: flex;
-    flex-direction: column;
-    padding: 40px;
-    margin: 20px 10px;
-  }
-  #blog .blog-container .blog-text span {
-    font-size: 1.9vmin;
-    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
-    color: rgba(191, 191, 191, 0.4588235294);
-    margin-bottom: 7px;
-  }
-  #blog .blog-container .blog-text .blog-title {
-    font-size: 5vmin;
-  }
-  #blog .blog-container .blog-text p {
-    display: -webkit-box;
-    font-size: 13px;
-    line-height: 20px;
-    color: rgba(191, 191, 191, 0.4588235294);
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-  #blog .blog-container .blog-text .readmore {
-    color: green;
-    letter-spacing: 0.5px;
-    font-size: 2.9vmin;
-    text-align: center;
-    padding: 8px 0;
-    margin: 20px 32%;
-    border: 1px solid green;
-    border-radius: 50px;
-  }
-  #blog .blog-container .blog-text .readmore:hover {
-    color: whitesmoke;
-    background: green;
-    transition: all 0.2s ease-in-out;
-  }
-  #blog .blog-container .blog-text,
-#blog .blog-container .blog-title {
-    color: #111315;
+    float: right;
+    font-size: 12px;
     font-weight: 400;
-    font-family: "Clash Display", "Segoe UI", Arial;
-    font-size: 1.3rem;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    vertical-align: bottom;
+    letter-spacing: 1px;
+    margin-right: 30px;
   }
-  #blog .blog-container .blog-text,
-#blog .blog-container .blog-title:hover {
+  #blog-content .blog-row .blog-col-1 img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: 450px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  #blog-content .blog-row .blog-col-1 h6 {
+    font-size: 26px;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    margin-top: 70px;
+    padding: auto 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    line-height: 34px;
+  }
+  #blog-content .blog-row .blog-col-1 p {
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 23px;
+    margin: 35px 60px 35px 60px;
+  }
+  #blog-content .blog-row .blog-col-1 h3 {
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 27px;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  #blog-content .blog-row .blog-col-1 .blog-share {
+    float: none;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 200;
+    margin: 20px 30px;
+    cursor: pointer;
+  }
+  #blog-content .blog-row .blog-col-1 .blog-share span {
+    margin-left: 16px;
+    font-size: 22px;
+  }
+  #blog-content .blog-row .blog-col-1 .line {
+    height: 1px;
+    width: 100%;
+  }
+  #blog-content .blog-row .sidenav {
+    height: auto;
+    background-color: rgba(149, 149, 146, 0.1960784314);
+    padding: 15px 15px;
+    border-radius: 10px;
+    margin: auto 3vw;
+  }
+  #blog-content .blog-row .sidenav .side-top {
+    display: none;
+  }
+  #blog-content .blog-row .sidenav .blog-list {
+    text-align: left;
+    height: auto;
+    display: flex;
+  }
+  #blog-content .blog-row .sidenav .blog-list img {
+    width: 30vw;
+  }
+  #blog-content .blog-row .sidenav .blog-list h3 {
+    font-weight: 200;
+    font-size: 25px;
+    padding: 30px auto;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  #blog-content .blog-row .sidenav .blog-list p {
+    display: none;
+  }
+  #blog-content .blog-row .sidenav .blog-list a {
+    text-decoration: underline;
     color: green;
-    transition: all 0.3s ease-in-out;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-size: 13px;
   }
 
   .part1 .workimage {
@@ -637,7 +788,7 @@
     align-items: center;
     width: 100%;
     height: 100vmin;
-    background-image: url(/images/poster1.jpg);
+    background-image: url(/images/w1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -648,37 +799,46 @@
     align-content: center;
     text-align: center;
     padding: 95px 10vw;
-    background-color: green;
+    background-color: #111315;
   }
   .part1 .workintro h1 {
-    font-size: 7vmin;
+    font-size: 8vmin;
+    font-weight: 400;
     margin-bottom: 20px;
-    color: whitesmoke;
+    color: #e4e2da;
   }
   .part1 .workintro h2 {
     font-size: 3vmin;
     margin-bottom: 50px;
-    color: #e5e5e1;
+    color: #e4e2da;
+    font-weight: 200;
   }
   .part1 .workintro p {
-    font-size: 13px;
-    line-height: 25px;
     margin-bottom: 65px;
-    color: #e5e5e1;
+    color: #e4e2da;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 23px;
   }
   .part1 .workintro .buttom {
-    color: #111315;
-    background: whitesmoke;
-    padding: 9px 22px;
-    border-radius: 30px;
+    background-color: transparent;
+    color: whitesmoke;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 400;
     font-size: 13px;
-    font-family: Verdana, sans-serif, Arial;
-    letter-spacing: 2px;
+    text-decoration: none;
+    border: 1px solid green;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: 0.2s ease;
   }
-  .part1 .workintro .buttom:hover {
-    color: green;
-    background: #e5e5e1;
-    font-weight: 500;
+
+  .work-images {
+    width: 100%;
+    height: auto;
+  }
+  .work-images img {
+    width: 100%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -701,7 +861,7 @@
 
   .buttom:hover {
     color: #111315;
-    background: #e5e5e1;
+    background: #e4e2da;
     transform: translateY(2);
   }
 
@@ -714,7 +874,7 @@
     float: right;
     transform: none;
     height: 60px;
-    margin-right: 3vw;
+    margin-right: 6vw;
     padding: 8px;
   }
   .navbar .menu ul {
@@ -732,12 +892,34 @@
   }
   .navbar .menu li a {
     border-bottom: none;
-    font-size: 20px;
+    font-size: 17px;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 300;
     border-radius: 35px;
-    transition: all 0.2s ease;
+    transition: 0.1s ease;
   }
   .navbar .menu-icon {
     display: none;
+  }
+
+  #home-top .header-content {
+    padding: 70px;
+    margin-left: 5%;
+  }
+  #home-top .header-content .line {
+    width: 555px;
+    margin: 30px auto;
+    margin-left: 0;
+  }
+  #home-top .header-content h1 {
+    font-size: 7vmin;
+    margin-bottom: 120px;
+  }
+  #home-top .header-content h4 {
+    font-size: 25px;
+    margin-bottom: 80px;
+    line-height: 40px;
+    max-width: 600px;
   }
 
   #blog {
@@ -784,6 +966,185 @@
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
   }
 
+  #blog-content {
+    display: flex;
+    justify-content: center;
+    padding: auto 70px;
+    height: auto;
+  }
+  #blog-content .blog-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 0 40px;
+  }
+  #blog-content .blog-row .blog-col-1 {
+    width: 90%;
+    min-width: 300px;
+    padding-right: 30px;
+    margin-top: 100px;
+  }
+  #blog-content .blog-row .blog-col-1 h5 {
+    font-weight: 200;
+    margin-left: 0;
+  }
+  #blog-content .blog-row .blog-col-1 h1 {
+    font-size: 60px;
+    font-weight: 200;
+    margin: 45px auto;
+  }
+  #blog-content .blog-row .blog-col-1 h4 {
+    display: flex;
+    float: right;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    vertical-align: bottom;
+    letter-spacing: 1px;
+    margin-right: 0;
+  }
+  #blog-content .blog-row .blog-col-1 img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: 450px;
+    padding-top: 10px;
+  }
+  #blog-content .blog-row .blog-col-1 h6 {
+    font-size: 13px;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    margin-top: 40px;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  #blog-content .blog-row .blog-col-1 p {
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 23px;
+    margin: 15px auto;
+  }
+  #blog-content .blog-row .blog-col-1 h3 {
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 27px;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    margin-left: 0;
+  }
+  #blog-content .blog-row .blog-col-1 .blog-share {
+    float: none;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 200;
+    margin: 25px auto;
+  }
+  #blog-content .blog-row .blog-col-1 .blog-share span {
+    margin-left: 16px;
+    font-size: 22px;
+  }
+  #blog-content .blog-row .blog-col-1 .line {
+    height: 1px;
+    width: 100%;
+  }
+  #blog-content .blog-row .sidenav {
+    margin-top: 180px;
+    top: 0px;
+    right: 10px;
+    flex-basis: 30%;
+    overflow-x: hidden;
+    padding-left: 2vw;
+    background-color: transparent;
+  }
+  #blog-content .blog-row .sidenav .side-top {
+    display: block;
+  }
+  #blog-content .blog-row .sidenav .side-top .search {
+    box-sizing: border-box;
+  }
+  #blog-content .blog-row .sidenav .side-top .search input[type=text] {
+    padding: 9px;
+    font-size: 13px;
+    font-weight: 200;
+    border: 1px solid #111315;
+    border-radius: 5px;
+    outline: none;
+    width: 60%;
+    background: transparent;
+  }
+  #blog-content .blog-row .sidenav .side-top .search button {
+    background: transparent;
+    border: transparent;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+  #blog-content .blog-row .sidenav .side-top .tags {
+    margin-top: 60px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #111315;
+    margin-bottom: 15px;
+  }
+  #blog-content .blog-row .sidenav .side-top a {
+    padding: 6px 8px 6px 16px;
+    font-size: 20px;
+    display: block;
+    color: #111315;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 25px;
+  }
+  #blog-content .blog-row .sidenav .side-top a:hover {
+    color: green;
+  }
+  #blog-content .blog-row .sidenav .blog-list {
+    width: 100%;
+    display: block;
+  }
+  #blog-content .blog-row .sidenav .blog-list .blogsideimage {
+    background-image: url(/images/blogimage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+  }
+  #blog-content .blog-row .sidenav .blog-list h3 {
+    text-align: left;
+    font-weight: 200;
+    font-size: 22px;
+    margin-left: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  #blog-content .blog-row .sidenav .blog-list p {
+    display: block;
+    font-weight: 200;
+    font-size: 13px;
+    line-height: 21px;
+  }
+  #blog-content .blog-row .sidenav .blog-list a {
+    text-decoration: underline;
+    color: #111315;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-size: 13px;
+    float: right;
+    padding-top: 20px;
+  }
+  #blog-content .blog-row .sidenav .blog-list a:hover {
+    color: green;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact h1 {
+    font-family: "Clash Display", "Segoe UI", Arial;
+    font-weight: 400;
+    padding-top: 80px;
+  }
   .contact .inner-width {
     max-width: 800px;
   }
@@ -800,19 +1161,12 @@
   }
   .contact .contact-form .contact-btn {
     width: 180px;
-    color: whitesmoke;
-    background-color: green;
-    font-size: 16px;
-    letter-spacing: 4px;
-    border-radius: 50px;
-    padding: 80px auto;
-    margin: 40px auto;
-    margin-left: calc(50% - 100px);
-    cursor: pointer;
-    transition: 0.2 ease-in-out;
+    letter-spacing: 1px;
   }
   .contact .contact-form .contact-btn:hover {
-    background-color: #111315;
+    background-color: green;
+    color: whitesmoke;
+    cursor: pointer;
   }
 
   footer .arrowup {
@@ -822,19 +1176,19 @@
     right: 4vw;
     width: 60px;
     height: 60px;
-    line-height: 55px;
+    line-height: 60px;
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
     letter-spacing: 2px;
     color: whitesmoke;
     outline: none;
     background-color: #111315;
-    border: 3px solid green;
     border-radius: 10px;
     cursor: pointer;
   }
   footer .arrowup:hover {
-    background-color: green;
-    color: whitesmoke;
+    background-color: transparent;
+    border: 1px solid green;
+    color: #111315;
     font-weight: 600;
   }
 
@@ -845,29 +1199,23 @@
     padding: 90px 50px;
   }
   #about-top .about-top-container {
-    max-width: 100%;
+    max-width: 95%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   #about-top .about-top-container .aboutimage {
     height: auto;
     width: 260px;
   }
   #about-top .about-top-container .about-text {
-    width: 550px;
+    width: 80% px;
     margin-left: 30px;
     text-align: left;
   }
   #about-top .about-top-container .about-text h1 {
     font-size: 7vmin;
     font-weight: 400;
-  }
-  #about-top .about-top-container .about-text .line {
-    height: 1.2px;
-    width: 33vmin;
-    margin: -25px 0;
-    margin-bottom: 0px;
   }
   #about-top .about-top-container .about-text h2 {
     visibility: visible;
@@ -898,7 +1246,8 @@
     font-weight: 200;
     padding-left: 35px;
     border-left: 1px solid green;
-    margin: 40px auto;
+    margin-top: 60px;
+    margin-bottom: 120px;
   }
   #about-top .about-top-container .about-text a {
     background-color: transparent;
@@ -943,7 +1292,6 @@
     color: green;
     font-size: 2.6vmin;
     font-weight: 400;
-    text-decoration-style: dotted;
     margin-bottom: 10px;
   }
   #personal-info div p {
@@ -978,10 +1326,11 @@
   }
   .send-email .inner-width {
     width: 100%;
+    margin-top: 120px;
   }
   .send-email .inner-width p {
-    margin-bottom: 70px;
-    margin-top: -20px;
+    margin-bottom: 80px;
+    margin-top: 50px;
     font-size: 1.7vmin;
     letter-spacing: 1px;
   }
@@ -990,8 +1339,8 @@
     font-weight: 400;
   }
   .send-email .inner-width .line {
-    width: 40vmin;
-    margin-top: -41px;
+    width: 35vmin;
+    margin-top: -25px;
   }
   .send-email .inner-width h1:hover {
     color: green;
@@ -1000,11 +1349,10 @@
     font-weight: 200;
   }
   .send-email .inner-width h1:hover ~ .line {
-    background-color: #111315;
-    transform: scale(110%);
+    display: none;
   }
   .send-email .contact-info {
-    padding-top: 30px;
+    padding-bottom: 140px;
   }
   .send-email .contact-info .item {
     height: 30px;
@@ -1022,6 +1370,46 @@
   }
 }
 @media screen and (min-width: 1060px) {
+  #home-top .header-content {
+    margin-left: 10vw;
+  }
+
+  #about-top {
+    padding: 90px 90px;
+  }
+  #about-top .about-top-container {
+    width: 85%;
+    max-width: 1200px;
+  }
+
+  #personal-info p {
+    margin: auto 15vw;
+  }
+  #personal-info div h3 {
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  #personal-info div h3 span {
+    font-size: 23px;
+  }
+
+  .send-email {
+    height: 410px;
+  }
+  .send-email .inner-width {
+    margin-top: 170px;
+  }
+  .send-email .inner-width p {
+    margin-bottom: 90px;
+    margin-top: 80px;
+    font-size: 13px;
+  }
+  .send-email .inner-width h1 {
+    font-size: 6vmin;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
   #blog {
     display: flex;
     justify-content: center;
@@ -1084,6 +1472,10 @@
   #blog .blog-container .blog-box:hover {
     transform: scale(1.04);
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  #blog-content .blog-row {
+    max-width: 1500px;
   }
 }
 @media screen and (min-width: 1600px) {
