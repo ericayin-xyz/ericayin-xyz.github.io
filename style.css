@@ -37,22 +37,22 @@
     width: 100%;
     z-index: 3;
   }
-  .navbar ul {
+  .navbar .menu {
     display: block;
-    padding-top: 130px;
+    padding-top: 110px;
     height: 100vh;
     text-align: center;
     list-style: none;
     overflow: hidden;
   }
-  .navbar ul a {
+  .navbar .menu a {
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
     font-size: 40px;
     display: block;
-    padding: 4vh 0;
+    padding: 5vh 0;
     text-decoration: none;
   }
-  .navbar ul a:hover {
+  .navbar .menu a:hover {
     border: 1px solid green;
     color: green;
   }
@@ -95,7 +95,7 @@
     background: #333;
     display: block;
     height: 3px;
-    width: 27px;
+    width: 33px;
     border-radius: 2px;
     position: relative;
     transition: all 0.3s ease;
@@ -109,7 +109,7 @@
     width: 100%;
     position: absolute;
     transition: all 0.3s ease;
-    top: 8px;
+    top: 10px;
   }
   .navbar .menu-icon .nav-icon::after {
     background: rgb(0, 0, 0);
@@ -120,13 +120,13 @@
     border-radius: 2px;
     position: absolute;
     transition: all 0.3s ease;
-    top: -8px;
+    top: -10px;
   }
   .navbar .menu-btn {
     display: none;
   }
   .navbar .menu-btn:checked ~ .menu {
-    height: 100vh;
+    max-height: 100vh;
     transform: scaleX(1);
     background-color: #e4e2da;
   }
@@ -616,8 +616,9 @@
   }
 
   .send-email {
+    height: 300px;
     text-align: center;
-    height: 220px;
+    margin-top: 80px;
   }
   .send-email .inner-width {
     margin: auto;
@@ -671,11 +672,12 @@
   #blog-content {
     padding: auto 40px;
     height: auto;
-    display: block;
+    display: flex;
     justify-content: space-around;
     align-items: center;
   }
   #blog-content .blog-row .blog-col-1 {
+    display: block;
     width: 100%;
     min-width: 300px;
     margin-top: 70px;
@@ -749,38 +751,93 @@
     width: 100%;
   }
   #blog-content .blog-row .sidenav {
-    height: auto;
+    top: 0;
+    margin-top: 0;
+    right: 10px;
+    flex-basis: 30%;
+    overflow-x: hidden;
+    padding: 60px;
     background-color: rgba(149, 149, 146, 0.1960784314);
-    padding: 15px 15px;
-    border-radius: 10px;
-    margin: auto 3vw;
   }
   #blog-content .blog-row .sidenav .side-top {
+    display: block;
+  }
+  #blog-content .blog-row .sidenav .side-top .search {
     display: none;
+  }
+  #blog-content .blog-row .sidenav .side-top .tags {
+    margin-top: 20px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #111315;
+    margin-bottom: 50px;
+  }
+  #blog-content .blog-row .sidenav .side-top .samples {
+    display: flex;
+    flex-wrap: wrap;
+    color: green;
+  }
+  #blog-content .blog-row .sidenav .side-top .samples a {
+    padding: 6px 8px 6px 16px;
+    font-size: 20px;
+    display: block;
+    color: green;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 25px;
+    text-decoration: none;
+  }
+  #blog-content .blog-row .sidenav .side-top .samples a:hover {
+    color: green;
+  }
+  #blog-content .blog-row .sidenav .side-top a {
+    padding: 6px 8px 6px 16px;
+    font-size: 20px;
+    display: block;
+    color: #111315;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 25px;
   }
   #blog-content .blog-row .sidenav .blog-list {
-    text-align: left;
-    height: auto;
-    display: flex;
+    width: 100%;
+    display: block;
   }
-  #blog-content .blog-row .sidenav .blog-list img {
-    width: 30vw;
+  #blog-content .blog-row .sidenav .blog-list .blogsideimage {
+    background-image: url(/images/blogimage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
   }
   #blog-content .blog-row .sidenav .blog-list h3 {
+    text-align: left;
     font-weight: 200;
-    font-size: 25px;
-    padding: 30px auto;
-    margin-left: 20px;
-    margin-top: 20px;
+    font-size: 22px;
+    margin-left: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
   #blog-content .blog-row .sidenav .blog-list p {
-    display: none;
+    display: block;
+    font-weight: 200;
+    font-size: 13px;
+    line-height: 21px;
   }
   #blog-content .blog-row .sidenav .blog-list a {
-    text-decoration: underline;
     color: green;
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
     font-size: 13px;
+    float: right;
+    padding-top: 20px;
+    text-decoration: underline;
+  }
+  #blog-content .blog-row .sidenav .blog-list a:hover {
+    color: green;
   }
 
   .part1 .workimage {
@@ -842,6 +899,46 @@
   }
 }
 @media screen and (min-width: 768px) {
+  .navbar {
+    top: 0;
+    border-bottom: 1.5px solid green;
+  }
+  .navbar .menu {
+    clear: none;
+    float: right;
+    transform: none;
+    height: 60px;
+    margin-right: 6vw;
+    padding: 8px;
+  }
+  .navbar .menu ul {
+    height: 0px;
+    scale: 0;
+    text-align: center;
+    right: 100%;
+  }
+  .navbar .menu li {
+    float: left;
+    display: block;
+    align-items: center;
+    height: 100px;
+    width: 120px;
+  }
+  .navbar .menu li :nth-child(1) {
+    padding-top: 15px;
+  }
+  .navbar .menu li a {
+    border-bottom: none;
+    font-size: 22px;
+    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
+    font-weight: 300;
+    border-radius: 35px;
+    transition: 0.1s ease;
+  }
+  .navbar .menu-icon {
+    display: none;
+  }
+
   .part1 .workintro {
     display: flex;
     flex-direction: column;
@@ -863,43 +960,6 @@
     color: #111315;
     background: #e4e2da;
     transform: translateY(2);
-  }
-
-  .navbar {
-    bottom: 0;
-    border-bottom: 1.5px solid green;
-  }
-  .navbar .menu {
-    clear: none;
-    float: right;
-    transform: none;
-    height: 60px;
-    margin-right: 6vw;
-    padding: 8px;
-  }
-  .navbar .menu ul {
-    height: 0;
-    text-align: center;
-  }
-  .navbar .menu li {
-    float: left;
-    display: block;
-    align-items: center;
-    width: 120px;
-  }
-  .navbar .menu li :nth-child(1) {
-    padding-top: 15px;
-  }
-  .navbar .menu li a {
-    border-bottom: none;
-    font-size: 17px;
-    font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
-    font-weight: 300;
-    border-radius: 35px;
-    transition: 0.1s ease;
-  }
-  .navbar .menu-icon {
-    display: none;
   }
 
   #home-top .header-content {
@@ -966,22 +1026,16 @@
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
   }
 
-  #blog-content {
-    display: flex;
-    justify-content: center;
-    padding: auto 70px;
-    height: auto;
-  }
   #blog-content .blog-row {
     display: flex;
+    justify-content: center;
     flex-wrap: nowrap;
-    justify-content: space-around;
     padding: 0 40px;
   }
   #blog-content .blog-row .blog-col-1 {
+    display: block;
     width: 90%;
     min-width: 300px;
-    padding-right: 30px;
     margin-top: 100px;
   }
   #blog-content .blog-row .blog-col-1 h5 {
@@ -1048,17 +1102,16 @@
   }
   #blog-content .blog-row .sidenav {
     margin-top: 180px;
-    top: 0px;
-    right: 10px;
-    flex-basis: 30%;
     overflow-x: hidden;
-    padding-left: 2vw;
+    padding: 0;
+    padding-left: 50px;
     background-color: transparent;
   }
   #blog-content .blog-row .sidenav .side-top {
     display: block;
   }
   #blog-content .blog-row .sidenav .side-top .search {
+    display: block;
     box-sizing: border-box;
   }
   #blog-content .blog-row .sidenav .side-top .search input[type=text] {
@@ -1086,7 +1139,7 @@
   #blog-content .blog-row .sidenav .side-top a {
     padding: 6px 8px 6px 16px;
     font-size: 20px;
-    display: block;
+    flex-wrap: nowrap;
     color: #111315;
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
     font-weight: 200;
@@ -1169,6 +1222,10 @@
     cursor: pointer;
   }
 
+  footer {
+    height: auto;
+    padding: 20px 0;
+  }
   footer .arrowup {
     position: fixed;
     z-index: 999;
@@ -1322,16 +1379,13 @@
   }
 
   .send-email {
-    height: 330px;
-  }
-  .send-email .inner-width {
-    width: 100%;
-    margin-top: 120px;
+    height: 380px;
+    margin-top: 90px;
   }
   .send-email .inner-width p {
     margin-bottom: 80px;
     margin-top: 50px;
-    font-size: 1.7vmin;
+    font-size: 14px;
     letter-spacing: 1px;
   }
   .send-email .inner-width h1 {
@@ -1350,9 +1404,6 @@
   }
   .send-email .inner-width h1:hover ~ .line {
     display: none;
-  }
-  .send-email .contact-info {
-    padding-bottom: 140px;
   }
   .send-email .contact-info .item {
     height: 30px;
@@ -1395,7 +1446,8 @@
   }
 
   .send-email {
-    height: 410px;
+    height: 470px;
+    margin-top: 70px;
   }
   .send-email .inner-width {
     margin-top: 170px;
@@ -1410,6 +1462,11 @@
     font-weight: 400;
     margin-bottom: 12px;
   }
+
+  .work-images {
+    padding: 60px;
+  }
+
   #blog {
     display: flex;
     justify-content: center;
@@ -1475,15 +1532,23 @@
   }
 
   #blog-content .blog-row {
-    max-width: 1500px;
+    max-width: 1600px;
   }
 }
+footer {
+  margin-top: 20px;
+}
+
 @media screen and (min-width: 1600px) {
   .blog-container {
-    max-width: 1600px;
+    max-width: 1800px;
   }
   .blog-container .blog-title {
     font-size: 1vmin;
+  }
+
+  .work-images {
+    padding: 10%;
   }
 }
 
