@@ -1387,7 +1387,6 @@ footer {
     height: auto;
     padding: 20px 0;
 
-
     .arrowup {
         position: fixed;
         z-index: 999;
@@ -1724,10 +1723,10 @@ footer {
     }
     }
 
-    #blog-content {
-    .blog-row {
-        max-width: 1600px;
-    }
+#blog-content {
+.blog-row {
+    max-width: 1600px;
+}
 }
 }
 footer {
