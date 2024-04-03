@@ -48,14 +48,22 @@
   .navbar .menu a {
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
     font-size: 40px;
+    font-weight: 200;
     display: block;
     padding: 5vh 0;
     text-decoration: none;
   }
+
+  .menu li a {
+    font-weight: 300; 
+    text-decoration: none; /* Removes the underline from links */
+  }
+
   .navbar .menu a:hover {
     border: 1px solid green;
     color: green;
   }
+
   .navbar .logo-container {
     float: left;
     display: flex;
@@ -929,9 +937,10 @@
   }
   .navbar .menu li a {
     border-bottom: none;
-    font-size: 22px;
+    font-size: 19px;
+    font-weight: 200;
     font-family: sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
-    font-weight: 300;
+    font-weight: 200;
     border-radius: 35px;
     transition: 0.1s ease;
   }
